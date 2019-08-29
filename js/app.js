@@ -40,6 +40,11 @@ magicButton.addEventListener('mouseleave',() => {
     console.log('leaving the button',magicButton);
 });
 
-document.addEventListener('keyup',() => {
-    console.log('key up');
+document.addEventListener('keydown',() => {
+    console.log(event.keyCode);
 });
+
+magicButton.addEventListener('click', () => {
+    magicButton.style.backgroundColor = '#333';
+    console.log('backgroud has changed to red');
+})
