@@ -29,3 +29,8 @@ main {
     font-style: italic;
     text-align: center;
 }
+
+#myPoint {
+    font-size: 5em;
+    color: tomato;
+}
