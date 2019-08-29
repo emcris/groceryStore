@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap');
+
 :root {
     --main_font: 'Roboto',
-    sans-serif;
+        sans-serif;
     --heading_font: 'Pacifico',
-    cursive;
+        cursive;
 
 }
 
+body {
+    background-color: #70DA40;
+    font-family: var(--main_font);
+}
+
+h1 {
+    color: #55C225;
+    font-family: var(--heading_font);
+}
+
+ul, li {
+    list-style: none;
+}
+main {
+    background-color: #fff;
+}
 #iconsCredit {
     font-size: 0.5em;
     font-style: italic;
