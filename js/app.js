@@ -30,7 +30,16 @@ console.log(imgExample);
 const magicButton = document.getElementById('magic');
 console.log('This is my Button:',magicButton);
 
-magicButton.addEventListener('click',() => {
+magicButton.addEventListener('mouseover',() => {
     magicButton.className = 'myPoint';
-    console.log(magicButton);
+    console.log('enter the button',magicButton);
+});
+
+magicButton.addEventListener('mouseleave',() => {
+    magicButton.className = '';
+    console.log('leaving the button',magicButton);
+});
+
+document.addEventListener('keyup',() => {
+    console.log('key up');
 });
