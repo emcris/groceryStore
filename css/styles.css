@@ -30,7 +30,7 @@ main {
     text-align: center;
 }
 
-#myPoint {
+.myPoint {
     font-size: 5em;
     color: tomato;
 }

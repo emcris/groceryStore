@@ -23,3 +23,14 @@ console.log(example);
 
 const getClasses = document.getElementsByClassName('nav_list_item');
 console.log('get the class:',getClasses);
+
+const imgExample = document.querySelector('img[alt="cherry icon"]');
+console.log(imgExample);
+
+const magicButton = document.getElementById('magic');
+console.log('This is my Button:',magicButton);
+
+magicButton.addEventListener('click',() => {
+    magicButton.className = 'myPoint';
+    console.log(magicButton);
+});
