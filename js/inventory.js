@@ -127,4 +127,73 @@ const addInventoryToDOM = function (list) {
 //Remember that array full of the produce I, you created? Well, now it serves here to loop through and append to the container. Done.
 addInventoryToDOM(inventoryList);
 
+//Inventory Form
+//create landscape;
+// const container = document.createElement('main');
+// container.className = 'container content';
+//attach to the HTML body - i didnt make it into a variable because this is the only thing that will stay outside. you will see...
+// document.body.appendChild(container);
+
+
+/* 
+This label anon method is in charge of making labels on call. it takes two params, 1: is the id that will match the form input id, 2: the text i want for the inner text of the label
+*/
+let label = (forId, text) => {
+    const label = document.createElement('label');
+    label.setAttribute('for', forId);
+    label.innerText = text;
+    return label;
+}
+/*
+The formInput job is to create form elements that will exist in a form. it takes five params, 1: the element input you want, 2: the type of form input this will be 3: the name of the element, 4: any classes I may add, 5: the id that will match with my label and any other needs
+*/
+let formInput = (element, type, name, classes, id) => {
+    const newFormElement = document.createElement(element);
+    newFormElement.setAttribute('type', type);
+    newFormElement.setAttribute('name', name);
+    newFormElement.className = classes;
+    newFormElement.id = id;
+    return newFormElement;
+}
+
+//Now, let's create a function that will handle the form 
+
+function form() {
+    const basicForm = document.createElement('form');
+    basicForm.setAttribute('method', 'GET');
+    basicForm.setAttribute('action', 'index.html');
+    basicForm.setAttribute('name', 'myForm');
+
+    //now lets call in the input functions
+    const inputEmail = formInput('input', 'email', 'email', 'form-control', 'email');
+    const labelEmail = label(inputEmail.name, 'Email');
+    const inputSubject = formInput('input', 'text', 'subject', 'form-control', 'subject');
+    const labelSubject = label('subject', 'Subject');
+    const labelTextArea = label('message', 'Message');
+    const textArea = formInput('textarea', 'text', 'message', 'form-control', 'message');
+    // textArea.setAttribute('cols', 4);
+    textArea.setAttribute('rows', 5);
+    const button = document.createElement('button');
+    button.setAttribute('type', 'submit');
+    button.innerText = 'Submit';
+
+    const formGroup = document.createElement('div');
+    formGroup.className = 'form-group';
+    //append the inputs and labels to the form. I do it in order from top to bottom and use append() to combine the label and input together.
+    formGroup.append(labelEmail, inputEmail);
+    formGroup.append(labelSubject, inputSubject);
+    formGroup.append(labelTextArea, textArea);
+    formGroup.appendChild(button);
+    /* since i am trying to append a parent to child relationship i use the appendChild *if you used appendChild for each that is okay too, i just wanted to share another way* */
+    basicForm.appendChild(formGroup);
+    const container = document.getElementById('inventoryForm');
+    container.appendChild(basicForm);
+
+}
+
+form();
+
+let formz = document.forms.myForm;
+console.log(formz.elements.message);
+
 
