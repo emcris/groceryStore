@@ -1,4 +1,4 @@
-const storeName = 'Jacque\'s';
+const storeName = 'Emily\'s';
 document.title = `${storeName} Grocery Store`;
 
 const NAV_LIST = [
