@@ -127,3 +127,4 @@ const addInventoryToDOM = function (list) {
 //Remember that array full of the produce I, you created? Well, now it serves here to loop through and append to the container. Done.
 addInventoryToDOM(inventoryList);
 
+
