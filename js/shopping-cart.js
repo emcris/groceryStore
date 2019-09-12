@@ -116,7 +116,7 @@ function makeProduceCard(produce) {
     let discountPrice;
     let savings;
 
-    const box = makeElement('div', '', 'col-md-3 col-md-offset-2 text-center box', '');
+    const box = makeElement('div', '', 'col-md-8 text-center box', '');
     const wrapper = makeElement('div', '', 'row', '');
     const li = makeElement('li', `produceItem${produce.produce}`, '', '');
     const image = makeElement('img', `${produce.produce.toLowerCase()}`, 'img-responsive col-md-5', '');
@@ -131,7 +131,10 @@ function makeProduceCard(produce) {
         savings = '';
     }
     
-    wrapper.append(image, produceName, price, discountPrice, savings);
+    const checkbox = makeElement('input', 'selectBox','form-control','')
+    makeAttributes(checkbox,['type','checkbox'], ['name',`${produce.produce.toLowerCase()}`]);
+    
+    wrapper.append(image, produceName, price, discountPrice, savings, checkbox);
     li.append(wrapper);
     box.appendChild(li);
     return box;
@@ -145,3 +148,9 @@ const addInventoryToDOM = function (list) {
 }
 
 addInventoryToDOM(inventoryList);
+
+
+//----------------------------------
+
+const grocery = document.getElementById('groceryList');
+
