@@ -133,7 +133,7 @@ function makeProduceCard(produce) {
     
     const checkbox = makeElement('input', 'selectBox','form-control','')
     makeAttributes(checkbox,['type','checkbox'], ['name',`${produce.produce.toLowerCase()}`]);
-    
+
     wrapper.append(image, produceName, price, discountPrice, savings, checkbox);
     li.append(wrapper);
     box.appendChild(li);
@@ -154,3 +154,6 @@ addInventoryToDOM(inventoryList);
 
 const grocery = document.getElementById('groceryList');
 
+
+//if check marked remove from current array and move it to a new array
+//new container with the list of checked items, their price, and the grand total
